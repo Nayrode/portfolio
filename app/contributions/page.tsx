@@ -34,7 +34,7 @@ const contributions = [
   {
     title: "umami-software/umami",
     description: "Added CSS fix.",
-    link: "https://github.com/umami-software/umami/pull/1234",
+    link: "https://github.com/umami-software/umami/pull/3956",
     merged: true,
   },
   {
