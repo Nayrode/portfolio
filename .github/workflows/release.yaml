@@ -1,4 +1,4 @@
-name: Build Coffee Home on release
+name: Build Portfolio on release
 
 on:
   release:
