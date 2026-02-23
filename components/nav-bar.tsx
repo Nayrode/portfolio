@@ -35,7 +35,7 @@ export default function NavBar() {
       logoUrl="/path-to-your-logo.svg"
       accentColor="#5227FF"
       isFixed={true}
-      headerClassName="pt-10 px-8"
+      headerClassName="p-8"
       onMenuOpen={() => console.log("Menu opened")}
       onMenuClose={() => console.log("Menu closed")}
     />

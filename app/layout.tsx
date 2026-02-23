@@ -10,7 +10,7 @@ export default function RootLayout({
     <>
       <html lang="en" suppressHydrationWarning>
         <head />
-        <body>
+        <body className="m-0 p-0 min-h-screen overflow-hidden">
           <NavBar />
           {children}
         </body>

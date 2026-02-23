@@ -4,6 +4,8 @@ import React, { useCallback, useLayoutEffect, useRef, useState } from "react";
 import { gsap } from "gsap";
 import "./StaggeredMenu.css";
 import { cn } from "@/lib/utils";
+import { Github } from "lucide-react";
+import Link from "next/link";
 
 export const StaggeredMenu = ({
   position = "right",
@@ -417,9 +419,21 @@ export const StaggeredMenu = ({
         })()}
       </div>
       <header
-        className={cn("staggered-menu-header", headerClassName)}
+        className={cn(
+          "staggered-menu-header w-full flex justify-between",
+          headerClassName,
+        )}
         aria-label="Main navigation header"
       >
+        <Link
+          href="https://github.com/Nayrode"
+          target="_blank"
+          rel="noopener noreferrer"
+          className="cursor-pointer"
+          aria-label="GitHub profile"
+        >
+          <Github />
+        </Link>
         <button
           ref={toggleBtnRef}
           className="sm-toggle"
