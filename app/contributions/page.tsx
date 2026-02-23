@@ -1,6 +1,6 @@
 "use client";
 
-import GlassSurface from '@/components/GlassSurface';
+import GlassSurface from "@/components/GlassSurface";
 import LaserFlow from "@/components/LaserFlow";
 import Silk from "@/components/Silk";
 import { GitMerge, GitPullRequestArrow } from "lucide-react";
@@ -47,7 +47,7 @@ export default function Contributions() {
         <LaserFlow
           className="w-10 h-full hidden lg:block"
           style={{}}
-          dpr={typeof window !== 'undefined' ? window.devicePixelRatio : 1}
+          dpr={typeof window !== "undefined" ? window.devicePixelRatio : 1}
           horizontalBeamOffset={-0.4}
           verticalBeamOffset={-0.5}
           horizontalSizing={0.2}
@@ -64,26 +64,23 @@ export default function Contributions() {
         <h1 className="text-3xl md:text-5xl font-bold">Contributions</h1>
         <div className="flex flex-col gap-4 w-full">
           {contributions.map((c, i) => (
-            <GlassSurface
-              width="100%"
-              height={100}
-              borderRadius={50}
-              key={i}
-            >
-                <Link href={c.link} target="_blank" className="w-full">
-                    <div className="flex justify-between items-center w-full px-5">
-                      <div>
-                        <h2 className="md:text-xl font-bold">{c.title}</h2>
-                        <p className='text-xs md:text-md text-muted-foreground'>{c.description}</p>
-                      </div>
-                      {c.merged ? (
-                        <GitMerge className="text-purple-600" />
-                      ) : (
-                        <GitPullRequestArrow className="text-green-500" />
-                      )}
-                    </div>
-                </Link>
-              </GlassSurface>
+            <GlassSurface width="100%" height={100} borderRadius={50} key={i}>
+              <Link href={c.link} target="_blank" className="w-full">
+                <div className="flex justify-between items-center w-full px-5">
+                  <div>
+                    <h2 className="md:text-xl font-bold">{c.title}</h2>
+                    <p className="text-xs md:text-md text-muted-foreground">
+                      {c.description}
+                    </p>
+                  </div>
+                  {c.merged ? (
+                    <GitMerge className="text-purple-600" />
+                  ) : (
+                    <GitPullRequestArrow className="text-green-500" />
+                  )}
+                </div>
+              </Link>
+            </GlassSurface>
           ))}
         </div>
       </div>

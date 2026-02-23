@@ -1,6 +1,5 @@
 "use client";
 
-import { ModeToggle } from "./mode-toggle";
 import StaggeredMenu from "./StaggeredMenu";
 
 const menuItems = [
