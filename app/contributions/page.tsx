@@ -8,6 +8,18 @@ import Link from "next/link";
 
 const contributions = [
   {
+    title: "beep",
+    description:
+      "University project where I implemented a Rust microservice (messages) and contributed to the React frontend.",
+    link: "https://github.com/beep-industries",
+  },
+  {
+    title: "dev-sys-do/sealci",
+    description:
+      "University project where I learned about sequoia pgp (cryptography) and implemented a CI engine in Rust.",
+    link: "https://github.com/dev-sys-do/sealci",
+  },
+  {
     title: "swingmx/webclient",
     description: "Contributed to swingmusic adding new shuffle functionality.",
     link: "https://github.com/swingmx/webclient/pull/57",
@@ -62,25 +74,27 @@ export default function Contributions() {
       </div>
       <div className="flex flex-col pl-10 pr-10 absolute pt-24 md:pt-10 lg:left-125 lg:right-125 gap-10">
         <h1 className="text-3xl md:text-5xl font-bold">Contributions</h1>
-        <div className="flex flex-col gap-4 w-full">
+        <div className="flex flex-col gap-4 w-full overflow-y-auto max-h-[70vh]">
           {contributions.map((c, i) => (
-            <GlassSurface width="100%" height={100} borderRadius={50} key={i}>
-              <Link href={c.link} target="_blank" className="w-full">
-                <div className="flex justify-between items-center w-full px-5">
-                  <div>
-                    <h2 className="md:text-xl font-bold">{c.title}</h2>
-                    <p className="text-xs md:text-md text-muted-foreground">
-                      {c.description}
-                    </p>
+            <div key={i} className="shrink-0">
+              <GlassSurface width="100%" height={100} borderRadius={50}>
+                <Link href={c.link} target="_blank" className="w-full">
+                  <div className="flex justify-between items-center w-full px-5">
+                    <div>
+                      <h2 className="md:text-xl font-bold">{c.title}</h2>
+                      <p className="text-xs md:text-md text-muted-foreground">
+                        {c.description}
+                      </p>
+                    </div>
+                    {c.merged ? (
+                      <GitMerge className="text-purple-600" />
+                    ) : c.merged == false ? (
+                      <GitPullRequestArrow className="text-green-500" />
+                    ) : null}
                   </div>
-                  {c.merged ? (
-                    <GitMerge className="text-purple-600" />
-                  ) : (
-                    <GitPullRequestArrow className="text-green-500" />
-                  )}
-                </div>
-              </Link>
-            </GlassSurface>
+                </Link>
+              </GlassSurface>
+            </div>
           ))}
         </div>
       </div>

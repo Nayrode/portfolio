@@ -33,7 +33,9 @@ export default function Home() {
             </h1>
           </div>
           <div className="flex flex-col items-start lg:items-end lg:gap-2">
-            <h3 className="text-xl lg:text-5xl text-muted-foreground lg:text-white">DevOps Engineer</h3>
+            <h3 className="text-xl lg:text-5xl text-muted-foreground lg:text-white">
+              DevOps Engineer
+            </h3>
             <Link
               href="https://github.com/Nayrode"
               target="_blank"
