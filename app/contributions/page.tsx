@@ -47,7 +47,7 @@ export default function Contributions() {
         <LaserFlow
           className="w-10 h-full hidden lg:block"
           style={{}}
-          dpr={window?.devicePixelRatio ?? 1}
+          dpr={typeof window !== 'undefined' ? window.devicePixelRatio : 1}
           horizontalBeamOffset={-0.4}
           verticalBeamOffset={-0.5}
           horizontalSizing={0.2}
