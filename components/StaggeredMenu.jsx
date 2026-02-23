@@ -6,6 +6,8 @@ import "./StaggeredMenu.css";
 import { cn } from "@/lib/utils";
 import { Github } from "lucide-react";
 import Link from "next/link";
+import { Linkedin } from "lucide-react";
+import { Mail } from "lucide-react";
 
 export const StaggeredMenu = ({
   position = "right",
@@ -425,15 +427,34 @@ export const StaggeredMenu = ({
         )}
         aria-label="Main navigation header"
       >
-        <Link
-          href="https://github.com/Nayrode"
-          target="_blank"
-          rel="noopener noreferrer"
-          className="cursor-pointer"
-          aria-label="GitHub profile"
-        >
-          <Github />
-        </Link>
+        <div className="flex gap-4">
+          <Link
+            href="https://github.com/Nayrode"
+            target="_blank"
+            rel="noopener noreferrer"
+            className="cursor-pointer"
+            aria-label="GitHub profile"
+          >
+            <Github size={32} />
+          </Link>
+          <Link
+            href="https://www.linkedin.com/in/dorian-tetu-417512196/"
+            target="_blank"
+            rel="noopener noreferrer"
+            className="cursor-pointer"
+            aria-label="LinkedIn profile"
+          >
+            <Linkedin size={32} />
+          </Link>
+          <Link
+            href="mailto:doriantetu34@gmail.com"
+            rel="noopener noreferrer"
+            className="cursor-pointer"
+            aria-label="Email contact"
+          >
+            <Mail size={32} />
+          </Link>
+        </div>
         <button
           ref={toggleBtnRef}
           className="sm-toggle"

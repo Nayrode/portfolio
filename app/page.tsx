@@ -19,26 +19,26 @@ export default function Home() {
         />
       </div>
       <div className="absolute flex flex-col w-full h-full justify-end p-8">
-        <div className="w-full h-fit flex items-end justify-between">
+        <div className="w-full h-fit flex flex-col-reverse gap-2 lg:gap-0 lg:flex-row items-start lg:items-end justify-between">
           <div className="flex flex-col items-start justify-end h-full">
             <h1
-              className={`${playfair.className} text-[17rem] font-bold text-white leading-none`}
+              className={`${playfair.className} text-7xl lg:text-[17rem] font-bold text-white leading-none`}
             >
               Dorian
             </h1>
             <h1
-              className={`${playfair.className} text-[16rem] font-bold text-white self-end leading-none`}
+              className={`${playfair.className} text-[7rem] lg:text-[16rem] font-bold text-white self-end leading-none`}
             >
               TETU
             </h1>
           </div>
-          <div className="flex flex-col items-end gap-2">
-            <h3 className="text-5xl text-silent">DevOps Engineer</h3>
+          <div className="flex flex-col items-start lg:items-end lg:gap-2">
+            <h3 className="text-xl lg:text-5xl text-muted-foreground lg:text-white">DevOps Engineer</h3>
             <Link
               href="https://github.com/Nayrode"
               target="_blank"
               rel="noopener noreferrer"
-              className="text-3xl text-white cursor-pointer hover:underline"
+              className="text-lg lg:text-3xl text-muted-foreground lg:text-white cursor-pointer hover:underline"
             >
               github.com/Nayrode
             </Link>

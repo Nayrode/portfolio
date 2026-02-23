@@ -60,7 +60,7 @@ export default function Contributions() {
           color="#cf9eff"
         />
       </div>
-      <div className="flex flex-col pl-10 pr-10 absolute pt-10 lg:left-125 lg:right-125 gap-10">
+      <div className="flex flex-col pl-10 pr-10 absolute pt-24 md:pt-10 lg:left-125 lg:right-125 gap-10">
         <h1 className="text-3xl md:text-5xl font-bold">Contributions</h1>
         <div className="flex flex-col gap-4 w-full">
           {contributions.map((c, i) => (
