@@ -16,6 +16,9 @@ RUN pnpm install --frozen-lockfile
 # Build stage
 FROM base AS build
 
+ARG DISCORD_WEBHOOK
+ENV DISCORD_WEBHOOK=$DISCORD_WEBHOOK
+
 COPY --from=dependencies /app/node_modules ./node_modules
 COPY . .
 
@@ -27,6 +30,9 @@ FROM base AS run
 ENV NODE_ENV=production
 ENV PORT=3000
 ENV HOSTNAME="0.0.0.0"
+
+ARG DISCORD_WEBHOOK
+ENV DISCORD_WEBHOOK=$DISCORD_WEBHOOK
 
 RUN addgroup --system --gid 1001 nodejs
 RUN adduser --system --uid 1001 nextjs

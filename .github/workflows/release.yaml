@@ -48,6 +48,8 @@ jobs:
           context: .
           push: true
           tags: ${{ steps.meta.outputs.tags }}
+          build-args: |
+            DISCORD_WEBHOOK=${{ secrets.DISCORD_WEBHOOK }}
 
       - name: Generate artifact attestation
         uses: actions/attest-build-provenance@v2
