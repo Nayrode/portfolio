@@ -11,7 +11,7 @@ export default function RootLayout({
     <>
       <html lang="en" suppressHydrationWarning>
         <head />
-        <body className="m-0 p-0 min-h-screen overflow-hidden">
+        <body className="m-0 p-0 min-h-screen overflow-hidden select-none">
           <NavBar />
           {children}
           <Toaster />

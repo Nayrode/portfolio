@@ -14,6 +14,7 @@ import {
 import { Button } from "@/components/ui/button";
 import { Textarea } from "@/components/ui/textarea";
 import { Input } from "@/components/ui/input";
+import OldComputer from "@/components/3d/old-computer";
 
 const formSchema = z.object({
   name: z
@@ -85,78 +86,83 @@ export default function Contact() {
           rotation={0}
         />
       </div>
-      <form
-        className="absolute inset-0 flex flex-col items-start justify-center gap-4 p-8 lg:max-w-1/2"
-        onSubmit={form.handleSubmit(onSubmit)}
-        id="contact-form"
-      >
-        <h1 className="text-3xl md:text-5xl font-bold">Contact Me</h1>
-        <FieldGroup>
-          <Controller
-            control={form.control}
-            name="name"
-            render={({ field, fieldState }) => (
-              <Field>
-                <FieldLabel>Name</FieldLabel>
-                <Input {...field} placeholder="John" autoComplete="off" />
-                {fieldState.error && (
-                  <FieldError>{fieldState.error.message}</FieldError>
-                )}
-              </Field>
-            )}
-          />
-          <Controller
-            control={form.control}
-            name="surname"
-            render={({ field, fieldState }) => (
-              <Field>
-                <FieldLabel>Surname</FieldLabel>
-                <Input {...field} placeholder="Doe" autoComplete="off" />
-                {fieldState.error && (
-                  <FieldError>{fieldState.error.message}</FieldError>
-                )}
-              </Field>
-            )}
-          />
-          <Controller
-            control={form.control}
-            name="email"
-            render={({ field, fieldState }) => (
-              <Field>
-                <FieldLabel>Email</FieldLabel>
-                <Input {...field} placeholder="john.doe@example.com" />
-                {fieldState.error && (
-                  <FieldError>{fieldState.error.message}</FieldError>
-                )}
-              </Field>
-            )}
-          />
-          <Controller
-            control={form.control}
-            name="message"
-            render={({ field, fieldState }) => (
-              <Field>
-                <FieldLabel>Message</FieldLabel>
-                <Textarea
-                  {...field}
-                  placeholder="Your message here..."
-                  rows={5}
-                />
-                {fieldState.error && (
-                  <FieldError>{fieldState.error.message}</FieldError>
-                )}
-              </Field>
-            )}
-          />
-          <Button
-            type="submit"
-            className="hover:cursor-pointer"
-            form="contact-form"
-          >
-            Submit
-          </Button>
-        </FieldGroup>
-      </form>
+      <div className="absolute w-full h-full flex p-8">
+        <form
+          className="w-full flex flex-col items-start justify-center gap-4 p-8 lg:max-w-1/2"
+          onSubmit={form.handleSubmit(onSubmit)}
+          id="contact-form"
+        >
+          <h1 className="text-3xl md:text-5xl font-bold">Contact Me</h1>
+          <FieldGroup>
+            <Controller
+              control={form.control}
+              name="name"
+              render={({ field, fieldState }) => (
+                <Field>
+                  <FieldLabel>Name</FieldLabel>
+                  <Input {...field} placeholder="John" autoComplete="off" />
+                  {fieldState.error && (
+                    <FieldError>{fieldState.error.message}</FieldError>
+                  )}
+                </Field>
+              )}
+            />
+            <Controller
+              control={form.control}
+              name="surname"
+              render={({ field, fieldState }) => (
+                <Field>
+                  <FieldLabel>Surname</FieldLabel>
+                  <Input {...field} placeholder="Doe" autoComplete="off" />
+                  {fieldState.error && (
+                    <FieldError>{fieldState.error.message}</FieldError>
+                  )}
+                </Field>
+              )}
+            />
+            <Controller
+              control={form.control}
+              name="email"
+              render={({ field, fieldState }) => (
+                <Field>
+                  <FieldLabel>Email</FieldLabel>
+                  <Input {...field} placeholder="john.doe@example.com" />
+                  {fieldState.error && (
+                    <FieldError>{fieldState.error.message}</FieldError>
+                  )}
+                </Field>
+              )}
+            />
+            <Controller
+              control={form.control}
+              name="message"
+              render={({ field, fieldState }) => (
+                <Field>
+                  <FieldLabel>Message</FieldLabel>
+                  <Textarea
+                    {...field}
+                    placeholder="Your message here..."
+                    rows={5}
+                  />
+                  {fieldState.error && (
+                    <FieldError>{fieldState.error.message}</FieldError>
+                  )}
+                </Field>
+              )}
+            />
+            <Button
+              type="submit"
+              className="hover:cursor-pointer"
+              form="contact-form"
+            >
+              Submit
+            </Button>
+          </FieldGroup>
+        </form>
+        <div className="absolute right-0 top-0 h-full w-1/2 hidden lg:block">
+          <OldComputer />
+        </div>
+      </div>
     </div>
   );
 }
